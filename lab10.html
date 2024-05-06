@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<title>Creating Maps with Leaflet</title>
+
+<link rel="stylesheet" href=https://unpkg.com/leaflet@1.9.3/dist/leaflet.css integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="crossorigin=""/>
+
+<script src=https://unpkg.com/leaflet@1.9.3/dist/leaflet.js integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
+
+</head>
+
+<body>
+
+<div id="map" style="height: 600px"></div>
+
+<script>
+var map = L.map('map').setView([13.7563, 100.5018], 10);
+L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+
+attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+
+}).addTo(map);
+
+var greenIcon = L.icon({
+
+iconUrl: 'https://cdn0.iconfinder.com/data/icons/restaurants-and-dining-flat/340/meal_food_client_man_eat_restaurant_dinner_hungry_enjoy-1024.png',
+
+iconSize: [30, 30], // size of the icon
+
+iconAnchor: [0, 0], // point of the icon which will correspond to marker's location
+
+popupAnchor: [15, -4] // point from which the popup should open relative to the iconAnchor
+
+});
+
+L.marker([13.74281,100.52396],{icon:greenIcon}).addTo(map).bindPopup("<b>ร้านใหม่เอี่ยม</b><br>เขตปทุมวัน, กรุงเทพมหานคร<br>");
+
+L.marker([13.83987,100.57417],{icon:greenIcon}).addTo(map).bindPopup("<b>ร้านซัวเถาก๋วยเตี๋ยวเป็ด</b><br>เขตจตุจักร, กรุงเทพมหานคร<br>");
+
+L.marker([13.72343,100.77280],{icon:greenIcon}).addTo(map).bindPopup("<b>ร้านKokeshi</b><br>เขตลาดกระบัง, กรุงเทพมหานคร<br>");
+
+L.marker([7.55080,99.61273],{icon:greenIcon}).addTo(map).bindPopup("<b>ร้านเฉินเจีย ติ่มซำคาเฟ่</b><br>อำเภอเมืองตรัง, ตรัง<br>");
+
+L.marker([13.73714,100.55991],{icon:greenIcon}).addTo(map).bindPopup("<b>ภัตตาคารท่องกี่</b><br>เขตคลองเตย, กรุงเทพมหานคร<br>");
+
+L.marker([13.79692,100.59537],{icon:greenIcon}).addTo(map).bindPopup("<b>ภัตตาคารตงเพ้ง</b><br>เขตลาดพร้าว, กรุงเทพมหานคร<br>");
+
+</script>
+
+</body>
+
+</html>
